@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the Document id"
+        android:id="@+id/documentIDET"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:maxLength="25"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the City Details"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:id="@+id/cityDetailET"
+        android:layout_below="@id/documentIDET"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:maxLength="25"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the no. Universities in City"
+        android:id="@+id/noOfUniET"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:layout_below="@id/cityDetailET"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:maxLines="1"
+        android:maxLength="25"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
+        android:shadowColor="@color/BlanchedAlmond"
+        android:id="@+id/addValuesBtn"
+        android:text="Add Values"
+        android:layout_below="@id/noOfUniET"
+        android:onClick="addValuesToFirebaseFireStore"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/downloadedDataTV"
+        android:layout_below="@id/addValuesBtn"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
+        android:shadowColor="@color/BlanchedAlmond"
+        android:id="@+id/getValuesBtn"
+        android:layout_below="@id/downloadedDataTV"
+        android:text="Get Values"
+        android:onClick="getValuesFromFirebaseFirestore"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
+        android:shadowColor="@color/BlanchedAlmond"
+        android:id="@+id/updateValuesBtn"
+        android:layout_below="@id/getValuesBtn"
+        android:text="Update Values"
+        android:onClick="updateDocumentFieldValue"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg"
+        android:shadowColor="@color/BlanchedAlmond"
+        android:id="@+id/deleteValuesBtn"
+        android:layout_below="@id/updateValuesBtn"
+        android:text="Delete Values"
+        android:onClick="deleteFieldFromCollectionDocument"/>
+</RelativeLayout>
